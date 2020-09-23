@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+			    http://www.springframework.org/schema/beans/spring-beans.xsd
+			    http://www.springframework.org/schema/context
+			    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--
+    组件扫描, 它需要我们给出一个基础包名
+    然后Spring会扫描这个包及其子包下的所有类中的Spring注解, 只有被扫描到的注解才能发挥作用
+    -->
+    <context:component-scan base-package="cn.com.mryhl"/>
+    <!--dao-->
+    <!--<bean id="accountDao" class="cn.com.mryhl.dao.impl.AccountDaoImpl"></bean>-->
+    <!--service-->
+    <!--<bean id="accountService" class="cn.com.mryhl.service.impl.AccountServiceImpl">
+        <property name="accountDao" ref="accountDao"></property>
+    </bean>-->
+</beans>

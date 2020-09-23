@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+        bean 告诉Spring创建一个对象,将对象放入Spring的IOC容器中
+        id    代表的是对象在容器中的唯一标识
+        class 代表的是要根据哪一个类去创建这个对象
+    -->
+    <!--<bean id="userDao" class="cn.com.mryhl.dao.impl.UserDaoImpl"></bean>-->
+
+    <!--<bean id="book" class="cn.com.mryhl.createbeans.Book" ></bean>-->
+    <!-- 使用静态工厂创建
+    需要我们知道1 类名  2 静态方法名
+    Book book1 = BookFactory.getBook1();
+    class 指定的是工厂的类名
+    factory-method   工厂中的静态方法的名称
+    -->
+    <!--<bean id="book1" class="cn.com.mryhl.createbeans.BookFactory" factory-method="getBook1"></bean>-->
+
+    <!--使用实例化工厂创建
+             需要1 先创建工厂实例    2 调用工厂实例的非静态方法
+             BookFactory bookFactory = new BookFactory();
+             Book book2 = bookFactory.getBook2();
+             factory-bean     用于指定调用哪一个bean工厂对象
+             factory-method   用于指定调用工厂中的哪一个非静态方法
+
+    -->
+    <!--<bean id="bookFactory" class="cn.com.mryhl.createbeans.BookFactory"></bean>
+    <bean id="book2" factory-bean="bookFactory" factory-method="getBook2"></bean>-->
+
+    <!--
+        Spring在内部内置了两个钩子函数,
+        在对象创建之后会去调用init-method属性指定的方法
+        在对象销毁之前会去调用destroy-method属性指定的方法
+    -->
+    <!--<bean id="book" class="cn.com.mryhl.createbeans.Book"
+              scope="prototype"
+              init-method="init" destroy-method="des"/>-->
+
+    <!--
+        name  构造函数中的形参的名称
+        index 构造函数中的形参的索引, 一般省略
+        type  构造函数中的形参的类型,一般可以省略, 底层可以通过反射技术自己获取
+        value 构造函数中的参数应该赋的值(简单类型: 基本类型 基本类型包装类型 字符串)
+        ref   构造函数中的参数应该赋的值(引用类型) 用于指定当前容器中一个存在的bean对象的id
+    -->
+    <!--<bean id="book" class="cn.com.mryhl.createbeans.Book">
+        <constructor-arg name="name" value="石头记"></constructor-arg>
+        <constructor-arg name="price" value="10"></constructor-arg>
+        <constructor-arg name="publish" ref="publish"></constructor-arg>
+
+    </bean>
+    <bean id="publish" class="java.util.Date"></bean>-->
+
+
+    <!--
+    name  set方法中的setXXX部分
+    value set方法应该赋的值(简单类型: 基本类型 基本类型包装类型 字符串)
+    ref   set方法应该赋的值(引用类型) 用于指定当前容器中一个存在的bean对象的id
+    -->
+    <!--<bean id="book" class="cn.com.mryhl.createbeans.Book">
+        <property name="name" value="西游记"></property>
+        <property name="price" value="11"></property>
+        <property name="publish" ref="publish"></property>
+    </bean>
+    <bean id="publish" class="java.util.Date"></bean>-->
+
+
+    <!--<bean id="book" class="cn.com.mryhl.createbeans.Book"
+          p:name="西游记"
+          p:price="12"
+          p:publish-ref="publish"></bean>
+    <bean id="publish" class="java.util.Date"></bean>-->
+
+    <!--<bean id="book" class="cn.com.mryhl.createbeans.Book">
+        <property name="myArray">
+            <array>
+                <value>AA</value>
+                <value>BB</value>
+            </array>
+        </property>
+        <property name="myList">
+            <list>
+                <value>CC</value>
+                <value>DD</value>
+            </list>
+        </property>
+        <property name="mySet">
+            <list>
+                <value>EE</value>
+                <value>FF</value>
+            </list>
+        </property>
+
+        <property name="myMap">
+            <map>
+                <entry key="GG" value="gg"></entry>
+                <entry key="MM" value="mm"></entry>
+            </map>
+        </property>
+        <property name="myProperties">
+            <props>
+                <prop key="XX">xx</prop>
+                <prop key="YY">yy</prop>
+            </props>
+        </property>
+    </bean>-->
+
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>cn.com.mryhl</groupId>
+    <artifactId>spring</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>day01_01_ioc</module>
+        <module>day01_02_springioc</module>
+        <module>day01_03_dbutils</module>
+        <module>day01_04_crud</module>
+        <module>day02_01_review</module>
+        <module>day02_02_anno_demo</module>
+        <module>day02_03_crudanno</module>
+        <module>day02_04_transfer</module>
+        <module>day02_05_tx</module>
+    </modules>
+
+
+</project>
