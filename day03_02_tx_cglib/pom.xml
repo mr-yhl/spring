@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>day02_04_transfer</artifactId>
+    <artifactId>day03_02_tx_cglib</artifactId>
     <dependencies>
         <!--mysql-->
         <dependency>

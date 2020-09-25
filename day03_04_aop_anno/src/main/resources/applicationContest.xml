@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop
+        https://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+    <!--组件扫描-->
+    <context:component-scan base-package="cn.com.mryhl"></context:component-scan>
+
+    <!--激活切面自动代理-->
+    <aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+    <!--目标对象-->
+    <!--<bean id="accountService" class="cn.com.mryhl.service.impl.AccountServiceImpl"></bean>-->
+    <!--增强对象-->
+    <!--<bean id="logger" class="cn.com.mryhl.log.Logger"></bean>-->
+    <!--aop配置-->
+    <aop:config>
+        <!--配置切点-->
+        <aop:pointcut id="pt" expression="execution(* cn.com.mryhl.service.impl.*.*(..))"/>
+        <!--配置切面-->
+        <!--切面: 切点(目标对象) + 增强(增强对象)
+            切面是一种描述, 描述了这样一件事: 一个  [什么样的增强功能]   添加在了    [哪些切点的]    [什么位置]上
+	        切面就是描述的切点方法和增强方法的执行顺序
+
+	        aspect ref="logger"  用于指定增强类   method  用于指定增强类中的一个具体增强方法
+	        pointcut-ref         用于指定切点
+	        before               增强方法在切点方法的指点运行-->
+        <!--<aop:aspect ref="logger">-->
+        <!--    &lt;!&ndash;<aop:before method="beforeMethod" pointcut-ref="pt"></aop:before>-->
+        <!--    <aop:after-returning method="afterReturnMethod" pointcut-ref="pt"></aop:after-returning>-->
+        <!--    <aop:after-throwing method="afterThrowMethod" pointcut-ref="pt"></aop:after-throwing>-->
+        <!--    <aop:after method="afterMethod" pointcut-ref="pt"></aop:after>&ndash;&gt;-->
+        <!--    <aop:around method="aroundMethod" pointcut-ref="pt"></aop:around>-->
+        <!--</aop:aspect>-->
+    </aop:config>
+</beans>

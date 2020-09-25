@@ -9,8 +9,14 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>day02_04_transfer</artifactId>
+    <artifactId>day03_05_tx_springaop</artifactId>
     <dependencies>
+        <!--aspectj-->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.7</version>
+        </dependency>
         <!--mysql-->
         <dependency>
             <groupId>mysql</groupId>

@@ -18,6 +18,14 @@
         <module>day02_03_crudanno</module>
         <module>day02_04_transfer</module>
         <module>day02_05_tx</module>
+        <module>day03_01_tx_jdk</module>
+        <module>day03_02_tx_cglib</module>
+        <module>day03_03_aop</module>
+        <module>day03_04_aop_anno</module>
+        <module>day03_05_tx_springaop</module>
+        <module>day03_06_jt</module>
+        <module>day03_07_jt_tx_xml</module>
+        <module>day03_08_jt_tx_anno</module>
     </modules>
 
 
