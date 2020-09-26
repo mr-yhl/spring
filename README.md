@@ -48,8 +48,7 @@ JdbcTemplate是Spring提供的持久层技术，用于操作数据库，它底�
 目标对象:  业务层的所有对象   **自己开发**
 
 增强对象:  事务管理器 (DataSourceTransactionManager) 
-
-​                **需要我们给它传递一批参数(事务隔离级别  传播行为  超时时长  只读)**
+ **需要我们给它传递一批参数(事务隔离级别  传播行为  超时时长  只读)**
 
 配置切面:  配置的是切点和增强的关系   **自己配置**
 [说明文件](./day03_07_jt_tx_xml/README.md)
@@ -57,8 +56,11 @@ JdbcTemplate是Spring提供的持久层技术，用于操作数据库，它底�
 目标对象:  业务层的所有对象   **自己开发**
 
 增强对象:  事务管理器 (DataSourceTransactionManager) 
-
-​                **需要我们给它传递一批参数(事务隔离级别  传播行为  超时时长  只读)**
+**需要我们给它传递一批参数(事务隔离级别  传播行为  超时时长  只读)**
 
 配置切面:  配置的是切点和增强的关系   **自己配置**
 [说明文件](./day03_08_jt_tx_anno/README.md)
+[SpringMVC](./day04_MVC)
+通过一套注解,让简单的Java类变成控制器
+SpringMVC将Servlet分离为两个部分,分别是负责请求转发的DispatcherServlet和负责调用的JavaBean
+[说明文件](./day04_MVC/README.md)

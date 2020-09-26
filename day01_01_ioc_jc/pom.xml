@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>day01_01_ioc</artifactId>
+    <artifactId>day01_01_ioc_jc</artifactId>
    <dependencies>
        <dependency>
            <groupId>junit</groupId>

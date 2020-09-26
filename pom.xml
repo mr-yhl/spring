@@ -9,7 +9,7 @@
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
     <modules>
-        <module>day01_01_ioc</module>
+        <module>day01_01_ioc_jc</module>
         <module>day01_02_springioc</module>
         <module>day01_03_dbutils</module>
         <module>day01_04_crud</module>
@@ -26,6 +26,7 @@
         <module>day03_06_jt</module>
         <module>day03_07_jt_tx_xml</module>
         <module>day03_08_jt_tx_anno</module>
+        <module>day04_MVC</module>
     </modules>
 
 
