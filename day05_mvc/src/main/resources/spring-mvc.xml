@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/mvc
+        https://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/context
+        https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!--注解扫描-->
+    <context:component-scan base-package="cn.com.mryhl.controller"/>
+    <context:component-scan base-package="cn.com.mryhl.handlers"/>
+
+    <!--三大组件-->
+    <mvc:annotation-driven/>
+    <bean id="viewResolver"
+          class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!--前后缀   他们会在页面跳转的时候,拼接在方法的返回值上-->
+        <property name="prefix" value="/WEB-INF/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!--
+        释放静态资源方式一(了解):
+        mapping 用来指定一个映射规则，匹配访问地址
+        location如果一个访问的地址可以被mapping指定的规则匹配上，就不再去调用处理器映射器查找相应的方法了，而是直接去location指定路径下获取资源
+    -->
+    <!--<mvc:resources mapping="/js/*" location="/js/" />-->
+    <!--
+        释放静态资源方式二
+        配置下面的选项之前, 请求是这样访问的: 前端控制器会将请求传给处理器映射器去寻找对应的处理方法,如果找不到,就会报404错误
+        配置下面的选项之后, 请求是这样访问的: 前端控制器会将请求传给处理器映射器去寻找对应的处理方法,如果找不到,暂时不要不错
+                                            而是将这个请求转交给外部容器(Tomcat)的默认处理器(default-servlet)去处理
+    -->
+    <!--<mvc:default-servlet-handler />-->
+
+    <!--配置拦截器链-->
+    <mvc:interceptors>
+        <!--配置拦截器-->
+        <mvc:interceptor>
+            <!--用于配置拦截规则-->
+            <mvc:mapping path="/**"/>
+            <!--用于配置不拦截的路径-->
+            <mvc:exclude-mapping path="/demoController/demo1"/>
+            <!--将上面的规则匹配中的访问请求,交给指定是拦截器处理-->
+            <bean class="cn.com.mryhl.handlers.MyHandlerInterceptor1"></bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/demoController/demo1"/>
+            <bean class="cn.com.mryhl.handlers.MyHandlerInterceptor2"></bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+</beans>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -27,6 +27,8 @@
         <module>day03_07_jt_tx_xml</module>
         <module>day03_08_jt_tx_anno</module>
         <module>day04_MVC</module>
+        <module>day05_mvc</module>
+        <module>day05_mvc_login</module>
     </modules>
 
 
